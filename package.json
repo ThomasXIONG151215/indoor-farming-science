@@ -1,0 +1,97 @@
+{
+  "name": "@vflab/indoor-farming-science-models",
+  "version": "1.0.0",
+  "description": "Open-source TypeScript library for scientifically-validated indoor farming simulation models. Includes plant physiology, building thermal, HVAC equipment, and energy system models.",
+  "keywords": [
+    "indoor-farming",
+    "plant-factory",
+    "cea",
+    "controlled-environment-agriculture",
+    "hvac",
+    "transpiration",
+    "penman-monteith",
+    "photosynthesis",
+    "farquhar",
+    "building-thermal",
+    "heat-transfer",
+    "energy-systems",
+    "photovoltaic",
+    "erv",
+    "heat-exchanger"
+  ],
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./plant-physiology": {
+      "import": "./dist/esm/plant-physiology/index.js",
+      "require": "./dist/cjs/plant-physiology/index.js",
+      "types": "./dist/types/plant-physiology/index.d.ts"
+    },
+    "./building-thermal": {
+      "import": "./dist/esm/building-thermal/index.js",
+      "require": "./dist/cjs/building-thermal/index.js",
+      "types": "./dist/types/building-thermal/index.d.ts"
+    },
+    "./hvac-equipment": {
+      "import": "./dist/esm/hvac-equipment/index.js",
+      "require": "./dist/cjs/hvac-equipment/index.js",
+      "types": "./dist/types/hvac-equipment/index.d.ts"
+    },
+    "./energy-systems": {
+      "import": "./dist/esm/energy-systems/index.js",
+      "require": "./dist/cjs/energy-systems/index.js",
+      "types": "./dist/types/energy-systems/index.d.ts"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vflab/indoor-farming-science-models.git"
+  },
+  "homepage": "https://github.com/vflab/indoor-farming-science-models#readme",
+  "bugs": {
+    "url": "https://github.com/vflab/indoor-farming-science-models/issues"
+  },
+  "license": "MIT",
+  "author": "VFLab Team",
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs && npm run build:types",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "docs": "typedoc --out docs src/index.ts",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run clean && npm run build && npm run test:run"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "eslint": "^8.55.0",
+    "rimraf": "^5.0.5",
+    "typedoc": "^0.25.4",
+    "typescript": "^5.3.2",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
