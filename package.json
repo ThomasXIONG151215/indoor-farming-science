@@ -1,5 +1,5 @@
 {
-  "name": "@vflab/indoor-farming-science-models",
+  "name": "@vflab/indoor-farming-science",
   "version": "1.0.0",
   "description": "Open-source TypeScript library for scientifically-validated indoor farming simulation models. Includes plant physiology, building thermal, HVAC equipment, and energy system models.",
   "keywords": [
@@ -58,11 +58,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vflab/indoor-farming-science-models.git"
+    "url": "git+https://github.com/vflab/indoor-farming-science.git"
   },
-  "homepage": "https://github.com/vflab/indoor-farming-science-models#readme",
+  "homepage": "https://github.com/vflab/indoor-farming-science#readme",
   "bugs": {
-    "url": "https://github.com/vflab/indoor-farming-science-models/issues"
+    "url": "https://github.com/vflab/indoor-farming-science/issues"
   },
   "license": "MIT",
   "author": "VFLab Team",

@@ -12,6 +12,7 @@
  * // Import specific modules
  * import { penmanMonteith } from '@vflab/indoor-farming-science-models/plant-physiology';
  * import { multiLayerWall } from '@vflab/indoor-farming-science-models/building-thermal';
+ * import { calculateErvPerformance } from '@vflab/indoor-farming-science-models/hvac-equipment';
  *
  * // Or import everything
  * import * as Models from '@vflab/indoor-farming-science-models';
@@ -27,13 +28,13 @@ export * from './common';
 export * from './plant-physiology';
 
 // Building thermal models (walls, glazing, materials)
-// export * from './building-thermal';
+export * from './building-thermal';
 
 // HVAC equipment models (ERV, heat exchangers, psychrometrics)
-// export * from './hvac-equipment';
+export * from './hvac-equipment';
 
 // Energy systems models (PV, storage, radiative cooling)
-// export * from './energy-systems';
+export * from './energy-systems';
 
 /**
  * Library version
