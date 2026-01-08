@@ -741,49 +741,6 @@ export class PVSingleDiodeModel {
   }
 
   /**
-   * Find MPP using golden section search
-   */
-  private findMPP(
-    params: FiveParameters,
-    Vt: number,
-    vOc: number
-  ): MPPResult {
-    if (vOc <= 0) {
-      return { vMpp: 0, iMpp: 0, pMpp: 0 };
-    }
-
-    const phi = (1 + Math.sqrt(5)) / 2;
-    const resphi = 2 - phi;
-
-    let a = 0;
-    let b = vOc;
-    let c = b - resphi * (b - a);
-    let d = a + resphi * (b - a);
-
-    const calcPower = (V: number) => {
-      const I = solveSingleDiodeEquation(V, params, Vt, this.spec.nCells);
-      return V * I;
-    };
-
-    while (Math.abs(b - a) > 1e-6) {
-      if (calcPower(c) > calcPower(d)) {
-        b = d;
-        d = c;
-        c = b - resphi * (b - a);
-      } else {
-        a = c;
-        c = d;
-        d = a + resphi * (b - a);
-      }
-    }
-
-    const vMpp = (a + b) / 2;
-    const iMpp = solveSingleDiodeEquation(vMpp, params, Vt, this.spec.nCells);
-
-    return { vMpp, iMpp, pMpp: vMpp * iMpp };
-  }
-
-  /**
    * Create zero output for zero irradiance condition
    */
   private createZeroOutput(): PVOutputs {

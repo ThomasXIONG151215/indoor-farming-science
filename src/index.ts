@@ -22,7 +22,10 @@
  */
 
 // Common utilities
-export * from './common';
+export * from './common/constants';
+export * from './common/validation';
+export * from './common/units';
+export type { ValidationResult } from './common/types';
 
 // Plant physiology models (transpiration, photosynthesis, growth)
 export * from './plant-physiology';
@@ -44,4 +47,4 @@ export const VERSION = '1.0.0';
 /**
  * Library name
  */
-export const LIBRARY_NAME = '@vflab/indoor-farming-science-models';
+export const LIBRARY_NAME = '@vflab/indoor-farming-science';

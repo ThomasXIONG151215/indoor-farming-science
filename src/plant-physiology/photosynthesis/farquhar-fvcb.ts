@@ -570,7 +570,7 @@ export function farquharFvCB(
     }
   } else {
     // Strict minimum
-    const rates = [
+    const rates: Array<{ rate: number; factor: 'rubisco' | 'electron_transport' | 'tpu' }> = [
       { rate: Ac, factor: 'rubisco' as const },
       { rate: Aj, factor: 'electron_transport' as const },
     ];
